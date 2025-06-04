@@ -96,7 +96,7 @@ const Hero = () => {
             Hi, I'm <span className="text-primary">Divyansh Singh</span>
           </h1>
           <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-          I’m a Computer Science student at VIT Andhra Pradesh with strong skills in full-stack development using the MERN stack. I’ve built projects like a bike rental platform, 3D portfolio, and weather dashboard. I interned at Bluestock, focusing on frontend tools with HTML, CSS, and JavaScript. I also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I’m passionate about creating efficient, user-friendly web applications and continuously learning new technologies.
+          I'm a Computer Science student at VIT Andhra Pradesh with strong skills in full-stack development using the MERN stack. I've built projects like a bike rental platform, 3D portfolio, and weather dashboard. I interned at Bluestock, focusing on frontend tools with HTML, CSS, and JavaScript. I also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about creating efficient, user-friendly web applications and continuously learning new technologies.
           </p>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center gap-4">
