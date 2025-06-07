@@ -117,29 +117,28 @@ const Projects = () => {
                 key={project.title}
                 className={`relative z-10 flex flex-col md:flex-row items-center md:items-stretch ${isLeft ? '' : 'md:flex-row-reverse'}`}
               >
-                {/* Dot */}
-                <span
-                  className={`hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 border-background`}
-                  style={{ background: project.color || '#6366f1', borderColor: '#fff' }}
-                />
-                {/* Horizontal line to image */}
-                <span
-                  className={`
-                    hidden md:block absolute top-1/2 
-                    ${isLeft ? 'left-[calc(50%+7px)]' : 'right-[calc(50%+10px)]'}
-                    h-1 w-8 bg-muted-foreground/30 z-0
-                  `}
-                  style={{
-                    transform: 'translateY(-50%)',
-                  }}
-                />
+                {/* Dot and horizontal line, now centered with the image and touching the image edge, never overlapping */}
+                <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none" style={{ height: '0', width: '0' }}>
+                  <span
+                    className="w-5 h-5 rounded-full border-4 border-background block z-10"
+                    style={{ background: project.color || '#6366f1', borderColor: '#fff', position: 'absolute', left: '-10px', top: '-10px' }}
+                  />
+                  <span
+                    className={
+                      isLeft
+                        ? 'absolute top-1/2 left-0 h-1 md:w-[calc(19vw-180px)] bg-muted-foreground/30 z-0 -translate-y-1/2 -translate-x-full'
+                        : 'absolute top-1/2 right-0 h-1 md:w-[calc(19vw-180px)] bg-muted-foreground/30 z-0 -translate-y-1/2 translate-x-full'
+                    }
+                  />
+                </div>
                 {/* Image with hover effect and tooltip */}
                 <motion.div
                   initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: idx * 0.1 }}
-                  className="w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0"
+                  className="w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0 relative z-10"
+                  style={{ marginLeft: isLeft ? '8px' : undefined, marginRight: !isLeft ? '8px' : undefined }}
                 >
                   {project.image && (
                     <div className="relative group">
