@@ -27,7 +27,7 @@ const projects: Project[] = [
     ],
     githubLink: "https://github.com/divyanshsingh07/Dr.Arun-Kumar-Yadav",
     liveLink: "https://dr-arun-kumar-yadav.vercel.app/",
-    image: "src/assets/project1.png",
+    image: "/images/project1.png",
     color: "#6366f1", // indigo
   },
   {
@@ -38,7 +38,7 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
     githubLink: "https://github.com/adityapandeydev/kundanpandey_portfolio.git",
     liveLink: "https://kundanpandey.in",
-    image: "src/assets/project2.png", // Make sure this image exists in your public folder
+    image: "/images/project2.png", // Make sure this image exists in your public folder
     color: "#10b981",
   },
  
@@ -50,7 +50,7 @@ const projects: Project[] = [
     techStack: ["React", "TypeScript", "TailwindCSS", "ShadCN UI", "Framer Motion"],
     githubLink: "https://github.com/divyanshsingh07/Ved.git",
     liveLink: "https://ved-xi.vercel.app/",
-    image: "src/assets/project4.png", // Make sure this image exists in your assets folder
+    image: "/images/project4.png", // Make sure this image exists in your public folder
     color: "#f43f5e", // rose or any color you like
   },
   // Add more projects as needed
@@ -62,7 +62,7 @@ const projects: Project[] = [
     techStack: ["React", "Vite", "TailwindCSS", "JavaScript", "node.js", "express.js", "mongodb"],
     githubLink: "https://github.com/divyanshsingh07/BikeRent.git",
     liveLink: "https://bike-rent-beta.vercel.app/",
-    image: "src/assets/project5.png",
+    image: "/images/project5.png",
     color: "#fbbf24",
   },
   {
@@ -73,7 +73,7 @@ const projects: Project[] = [
     techStack: ["React", "Vite", "TailwindCSS", "JavaScript"],
     githubLink: "https://github.com/divyanshsingh07/cloudi.git",
     liveLink: "https://cloudi-taupe.vercel.app/",
-    image: "src/assets/project6.png", // Make sure this image exists in your assets folder
+    image: "/images/project6.png", // Make sure this image exists in your public folder
     color: "#38bdf8", // sky blue or any color you like
   },
   {
@@ -84,7 +84,7 @@ const projects: Project[] = [
     techStack: ["JavaScript", "Chrome Extension", "Web APIs"],
     githubLink: "https://github.com/divyanshsingh07/CopyPasteBlocker.git", 
     liveLink: "", // You can add a Chrome Web Store link or leave empty
-    image: "src/assets/project7.png", // Place a relevant screenshot in your assets folder
+    image: "/images/project7.png", // Place a relevant screenshot in your public folder
     color: "#6366f1", // Use any color you like
   },
   {
@@ -95,7 +95,7 @@ const projects: Project[] = [
     techStack: ["React", "Three.js", "TailwindCSS"],
     githubLink: "https://github.com/divyanshsingh07/Divyansh-3d",
     liveLink: "https://divyansh-3d.vercel.app/",
-    image: "src/assets/project8.png", // Please add a relevant screenshot to your assets folder
+    image: "/images/project8.png", // Please add a relevant screenshot to your public folder
     color: "#6366f1", // Indigo or any color you like
   },
 ];
