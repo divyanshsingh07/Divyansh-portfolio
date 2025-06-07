@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
 interface Project {
@@ -132,11 +131,7 @@ const Projects = () => {
                   />
                 </div>
                 {/* Image with hover effect and tooltip */}
-                <motion.div
-                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: idx * 0.1 }}
+                <div
                   className="w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0 relative z-10"
                   style={{ marginLeft: isLeft ? '8px' : undefined, marginRight: !isLeft ? '8px' : undefined }}
                 >
@@ -177,13 +172,9 @@ const Projects = () => {
                       )}
                     </div>
                   )}
-                </motion.div>
+                </div>
                 {/* Info */}
-                <motion.div
-                  initial={{ opacity: 0, x: isLeft ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: idx * 0.1 }}
+                <div
                   className="w-full md:w-1/2 flex flex-col justify-center px-2 md:px-8"
                 >
                   <h3 className="text-2xl font-bold mb-1 flex items-center gap-2" style={{ color: project.color }}>{project.title}</h3>
@@ -221,7 +212,7 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
-                </motion.div>
+                </div>
               </div>
             );
           })}

@@ -95,7 +95,7 @@ const SkillTooltip = ({ percentage, note }: { percentage: number; note: string }
   );
 };
 
-const AnimatedProgressBar = ({ rating }: { rating: number; note: string }) => {
+const AnimatedProgressBar = ({ rating, note }: { rating: number; note: string }) => {
   const [progress, setProgress] = useState(0);
   const percentage = Math.round((rating / 5) * 100);
 

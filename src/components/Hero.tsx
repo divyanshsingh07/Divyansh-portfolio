@@ -1,12 +1,10 @@
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { Button } from './ui/button';
 import { useTheme } from './theme-provider';
 import { FolderKanban } from 'lucide-react';
 
 import 'react-circular-progressbar/dist/styles.css';
-
-const HERO_DESCRIPTION = `   I am a Computer Science student at VIT-AP with strong full-stack development skills, specializing in the MERN stack. I've built projects like a bike rental platform, a 3D portfolio, and a weather dashboard. I interned at Bluestock, focusing on frontend development with HTML, CSS, and JavaScript, and also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about building efficient, user-friendly web applications and constantly exploring new technologies.`;
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -45,19 +43,6 @@ const Hero = () => {
     [springX, springY],
     ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, ${spotlightColor}, transparent 80%)`
   );
-
-  const [typedText, setTypedText] = useState('');
-
-  useEffect(() => {
-    setTypedText('');
-    let i = 0;
-    const interval = setInterval(() => {
-      setTypedText((prev) => prev + HERO_DESCRIPTION[i]);
-      i++;
-      if (i >= HERO_DESCRIPTION.length) clearInterval(interval);
-    }, 30); // minimal, smooth typing
-    return () => clearInterval(interval);
-  }, []);
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const bounds = heroRef.current?.getBoundingClientRect();
@@ -110,9 +95,9 @@ const Hero = () => {
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
             Hi, I'm <span className="text-primary">Divyansh Singh</span>
           </h1>
-          <div className="max-w-4xl mx-auto mt-6 text-lg text-muted-foreground font-normal">
-            <span>{typedText}</span>
-          </div>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
+          I'm a Computer Science student at VIT Andhra Pradesh with strong skills in full-stack development using the MERN stack. I've built projects like a bike rental platform, 3D portfolio, and weather dashboard. I interned at Bluestock, focusing on frontend tools with HTML, CSS, and JavaScript. I also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about creating efficient, user-friendly web applications and continuously learning new technologies.
+          </p>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center gap-4">
               <Button 
