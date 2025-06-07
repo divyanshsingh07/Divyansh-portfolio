@@ -6,7 +6,7 @@ import { FolderKanban } from 'lucide-react';
 
 import 'react-circular-progressbar/dist/styles.css';
 
-const HERO_DESCRIPTION = ` I'm a Computer Science student at VIT-AP with strong full-stack development skills, specializing in the MERN stack. I've built projects like a bike rental platform, a 3D portfolio, and a weather dashboard. I interned at Bluestock, focusing on frontend development with HTML, CSS, and JavaScript, and also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about building efficient, user-friendly web applications and constantly exploring new technologies.`;
+const HERO_DESCRIPTION = `   I am a Computer Science student at VIT-AP with strong full-stack development skills, specializing in the MERN stack. I've built projects like a bike rental platform, a 3D portfolio, and a weather dashboard. I interned at Bluestock, focusing on frontend development with HTML, CSS, and JavaScript, and also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about building efficient, user-friendly web applications and constantly exploring new technologies.`;
 
 const Hero = () => {
   const { theme } = useTheme();
