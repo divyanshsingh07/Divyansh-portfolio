@@ -4,6 +4,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
+    name: 'OMGVA Foundation Team',
+    role: 'Spiritual Organization',
+    text: `Our new website OMGVA.in, crafted by Divyansh, has transformed our online presence. The site beautifully reflects our mission and values, making it easier for people to connect, learn, and support our cause. We deeply appreciate his creativity, technical skill, and commitment to our vision.`,
+  },
+  {
     name: 'Mitra Shree Ji',
     role: 'Director, OMGVA Foundation',
     text: `Divyansh truly understood our foundation's mission and translated it into a beautiful, functional website. His professionalism and attention to detail made the process seamless and enjoyable. We are grateful for his dedication to our cause.`,

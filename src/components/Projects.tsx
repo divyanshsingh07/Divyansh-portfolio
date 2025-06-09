@@ -13,6 +13,24 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "OMGVA.in",
+    subtitle: "Spiritual Foundation Website",
+    description:
+      "A modern, responsive website for OMGVA Foundation, featuring information about the ashram, mission, events, gallery, and donation options. Built for accessibility and engagement.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "TailwindCSS",
+      "ShadCN UI",
+      "Framer Motion"
+    ],
+    githubLink: "https://github.com/divyanshsingh07/OMGVA-Foundation.git",
+    liveLink: "https://omgva.in",
+    image: "/images/project9.png", // Please add a relevant screenshot to your public folder
+    color: "#f97316", // orange
+  },
+  {
     title: "Portfolio for My Maths Teacher",
     subtitle: "Personal Portfolio",
     description:
