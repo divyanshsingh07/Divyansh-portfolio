@@ -3,7 +3,7 @@ import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaPython, FaFigma, FaG
 import { SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiJavascript, SiVercel, SiCplusplus } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { DiVisualstudio } from "react-icons/di";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const skillCategories = [
   {
@@ -82,59 +82,37 @@ const skillIcons: Record<string, JSX.Element> = {
 
 const SkillTooltip = ({ percentage, note }: { percentage: number; note: string }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 10 }}
-      className="absolute -top-20 left-0 right-0 mx-auto bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg z-50 w-40 pointer-events-none"
-    >
+    <div className="absolute -top-20 left-0 right-0 mx-auto bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg z-50 w-40 pointer-events-none">
       <div className="text-center font-bold mb-0.5">{percentage}%</div>
       <div className="text-xs text-gray-300 text-center leading-tight">{note}</div>
       <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
-    </motion.div>
+    </div>
   );
 };
 
-const AnimatedProgressBar = ({ rating }: { rating: number; note: string }) => {
-  const [progress, setProgress] = useState(0);
+const ProgressBar = ({ rating }: { rating: number; note: string }) => {
   const percentage = Math.round((rating / 5) * 100);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setProgress(percentage);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [percentage]);
 
   return (
     <div className="relative w-full h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-visible">
       <div
-        className="h-full bg-gradient-to-r from-indigo-400 to-indigo-600 dark:from-indigo-500 dark:to-indigo-700 rounded-full transition-all duration-1000 ease-out"
-        style={{ width: `${progress}%` }}
+        className="h-full bg-gradient-to-r from-indigo-400 to-indigo-600 dark:from-indigo-500 dark:to-indigo-700 rounded-full"
+        style={{ width: `${percentage}%` }}
       />
     </div>
   );
 };
 
 const Skills = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
   return (
     <section id="skills" className="py-16 px-4 bg-background relative overflow-hidden">
-      <motion.div 
-        style={{ y }}
-        className="max-w-6xl mx-auto"
-      >
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">
           <span className="border-b-4 border-indigo-500 pb-1">My Skills</span>
         </h2>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+          {skillCategories.map((category) => (
+            <div
               key={category.category}
               className="mb-8 break-inside-avoid rounded-xl border border-gray-100 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             >
@@ -159,23 +137,21 @@ const Skills = () => {
                           {skill.name}
                         </span>
                       </div>
-                      <AnimatedProgressBar rating={skill.rating} note={skill.note} />
-                      <AnimatePresence>
-                        {showTooltip && (
-                          <SkillTooltip 
-                            percentage={Math.round((skill.rating / 5) * 100)} 
-                            note={skill.note} 
-                          />
-                        )}
-                      </AnimatePresence>
+                      <ProgressBar rating={skill.rating} note={skill.note} />
+                      {showTooltip && (
+                        <SkillTooltip 
+                          percentage={Math.round((skill.rating / 5) * 100)} 
+                          note={skill.note} 
+                        />
+                      )}
                     </div>
                   );
                 })}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

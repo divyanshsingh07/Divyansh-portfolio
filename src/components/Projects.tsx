@@ -181,9 +181,9 @@ const Projects = () => {
                             {!loadedImages[project.image] && (
                               <div className="absolute inset-0 bg-gray-200 rounded-xl" />
                             )}
-                            <img
-                              src={project.image}
-                              alt={project.title}
+                          <img
+                            src={project.image}
+                            alt={project.title}
                               loading="lazy"
                               width={800}
                               height={450}
@@ -191,7 +191,7 @@ const Projects = () => {
                                 loadedImages[project.image] ? 'opacity-100' : 'opacity-0'
                               }`}
                               onLoad={() => handleImageLoad(project.image!)}
-                            />
+                          />
                           </div>
                           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
                             <div className="text-white text-center px-4">
@@ -206,9 +206,9 @@ const Projects = () => {
                           {!loadedImages[project.image] && (
                             <div className="absolute inset-0 bg-gray-200 rounded-xl" />
                           )}
-                          <img
-                            src={project.image}
-                            alt={project.title}
+                    <img
+                      src={project.image}
+                      alt={project.title}
                             loading="lazy"
                             width={800}
                             height={450}
@@ -216,7 +216,7 @@ const Projects = () => {
                               loadedImages[project.image] ? 'opacity-100' : 'opacity-0'
                             }`}
                             onLoad={() => handleImageLoad(project.image!)}
-                          />
+                    />
                         </div>
                       )}
                     </div>
