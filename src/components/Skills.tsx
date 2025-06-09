@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaPython, FaFigma, FaGlobe, FaJava } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiJavascript, SiVercel, SiCplusplus } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { DiVisualstudio } from "react-icons/di";
-import { motion } from "framer-motion";
 
 const skillCategories = [
   {
@@ -105,7 +104,7 @@ const ProgressBar = ({ rating }: { rating: number; note: string }) => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 px-4 bg-background relative overflow-hidden">
+    <section id="skills" className="py-16 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">
           <span className="border-b-4 border-indigo-500 pb-1">My Skills</span>
