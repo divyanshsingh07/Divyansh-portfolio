@@ -1,4 +1,5 @@
 import { Github, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
 interface Project {
   title: string;
@@ -118,6 +119,12 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({});
+
+  const handleImageLoad = (imagePath: string) => {
+    setLoadedImages(prev => ({ ...prev, [imagePath]: true }));
+  };
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -169,11 +176,23 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           className="block"
                         >
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full max-w-md h-full object-cover rounded-xl border shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
-                          />
+                          <div className="relative w-full max-w-md aspect-video">
+                            {/* Blur placeholder */}
+                            {!loadedImages[project.image] && (
+                              <div className="absolute inset-0 bg-gray-200 rounded-xl" />
+                            )}
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              loading="lazy"
+                              width={800}
+                              height={450}
+                              className={`w-full h-full object-cover rounded-xl border shadow-lg transition-transform duration-300 group-hover:scale-[1.02] ${
+                                loadedImages[project.image] ? 'opacity-100' : 'opacity-0'
+                              }`}
+                              onLoad={() => handleImageLoad(project.image!)}
+                            />
+                          </div>
                           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
                             <div className="text-white text-center px-4">
                               <p className="text-lg font-semibold mb-1">View Live Demo</p>
@@ -182,11 +201,23 @@ const Projects = () => {
                           </div>
                         </a>
                       ) : (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full max-w-md h-full object-cover rounded-xl border shadow-lg"
-                    />
+                        <div className="relative w-full max-w-md aspect-video">
+                          {/* Blur placeholder */}
+                          {!loadedImages[project.image] && (
+                            <div className="absolute inset-0 bg-gray-200 rounded-xl" />
+                          )}
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            loading="lazy"
+                            width={800}
+                            height={450}
+                            className={`w-full h-full object-cover rounded-xl border shadow-lg ${
+                              loadedImages[project.image] ? 'opacity-100' : 'opacity-0'
+                            }`}
+                            onLoad={() => handleImageLoad(project.image!)}
+                          />
+                        </div>
                       )}
                     </div>
                   )}
