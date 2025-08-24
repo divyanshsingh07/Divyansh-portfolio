@@ -14,6 +14,47 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Vedified Blogs",
+    subtitle: "AI-Powered Blogging Platform",
+    description:
+      "A full-stack blogging website with AI integration using Google Gemini. Features include rich text editing with TipTap, image management via ImageKit, admin dashboard, user authentication, and real-time content management. Built with modern React 19 and Node.js backend.",
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Google Gemini AI",
+      "ImageKit",
+      "TipTap Editor",
+      "TailwindCSS",
+      "JWT Auth"
+    ],
+    githubLink: "https://github.com/divyanshsingh07/Vedified-Blogs.git",
+    liveLink: "https://vedified-blogs.vercel.app",
+    image: "/images/project10.png",
+    color: "#8b5cf6", // violet
+  },
+  {
+    title: "MERN Workout Tracker",
+    subtitle: "Full-Stack Fitness Application",
+    description:
+      "A comprehensive workout tracking application built with the MERN stack. Users can create workout plans, track exercises, monitor progress, and manage their fitness journey. Features include user authentication, workout history, and responsive design for mobile and desktop use.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    githubLink: "https://github.com/divyanshsingh07/mern-workout-tracker.git",
+    liveLink: "https://mern-workout-tracker.vercel.app",
+    image: "/images/project11.png",
+    color: "#ef4444", // red
+  },
+  {
     title: "OMGVA.in",
     subtitle: "Spiritual Foundation Website",
     description:
