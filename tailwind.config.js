@@ -4,6 +4,11 @@ module.exports = {
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
     theme: {
     	extend: {
+			fontFamily: {
+				display: ["'Love Ya Like A Sister'", 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				monoDisplay: ["'Special Elite'", 'ui-monospace', 'SFMono-Regular', 'monospace'],
+				body: ["'Roboto Condensed'", 'ui-sans-serif', 'system-ui', 'sans-serif']
+			},
     		borderRadius: {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',

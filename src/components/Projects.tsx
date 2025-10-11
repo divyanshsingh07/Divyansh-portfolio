@@ -31,28 +31,26 @@ const projects: Project[] = [
       "JWT Auth"
     ],
     githubLink: "https://github.com/divyanshsingh07/Vedified-Blogs.git",
-    liveLink: "https://vedified-blogs.vercel.app",
+    liveLink: "https://vedt.onrender.com/",
     image: "/images/project10.png",
     color: "#8b5cf6", // violet
   },
   {
-    title: "MERN Workout Tracker",
-    subtitle: "Full-Stack Fitness Application",
+    title: "OMGVA Wellness Website",
+    subtitle: "Frontend Development & Deployment Project",
     description:
-      "A comprehensive workout tracking application built with the MERN stack. Users can create workout plans, track exercises, monitor progress, and manage their fitness journey. Features include user authentication, workout history, and responsive design for mobile and desktop use.",
+      "Designed and developed the complete OMGVa Wellness website from UI to deployment. Implemented a modern, responsive interface using HTML, CSS, JavaScript, and Tailwind CSS. Integrated Google Forms APIs for handling user interactions, registrations, and feedback submissions, ensuring a smooth and user-friendly experience.",
     techStack: [
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JavaScript",
+      "HTML",
       "CSS",
-      "HTML"
+      "JavaScript",
+      "Tailwind CSS",
+      "Google Forms API"
     ],
-    githubLink: "https://github.com/divyanshsingh07/mern-workout-tracker.git",
-    liveLink: "https://mern-workout-tracker.vercel.app",
+    githubLink: "https://github.com/divyanshsingh07/omgva.git",
+    liveLink: "https://omgvawellness.omgva.in",
     image: "/images/project11.png",
-    color: "#ef4444", // red
+    color: "#14b8a6", // teal
   },
   {
     title: "OMGVA.in",
@@ -113,27 +111,18 @@ const projects: Project[] = [
     color: "#f43f5e", // rose or any color you like
   },
   // Add more projects as needed
-  {
-    title: "Bike Rent",
-    subtitle: "Bike Rental Platform",
-    description:
-      "A web application for renting bikes online. Users can browse available bikes, book rentals, and manage their bookings. Built with a modern tech stack for a seamless rental experience.",
-    techStack: ["React", "Vite", "TailwindCSS", "JavaScript", "node.js", "express.js", "mongodb"],
-    githubLink: "https://github.com/divyanshsingh07/BikeRent.git",
-    liveLink: "https://bike-rent-beta.vercel.app/",
-    image: "/images/project5.png",
-    color: "#fbbf24",
-  },
+
   {
     title: "Cloudi",
-    subtitle: "Cloud Storage Web App",
-    description:
-      "A web app that predicts weather using an API and displays the data graphically through interactive charts. It provides real-time weather forecasts with visually appealing graphs for better data understanding.",
-    techStack: ["React", "Vite", "TailwindCSS", "JavaScript"],
-    githubLink: "https://github.com/divyanshsingh07/cloudi.git",
-    liveLink: "https://cloudi-taupe.vercel.app/",
-    image: "/images/project6.png", // Make sure this image exists in your public folder
-    color: "#38bdf8", // sky blue or any color you like
+    
+      subtitle: "Cloud Storage Web App",
+      description: "A web application that detects your current location's weather and displays the data using interactive, visually appealing charts. It provides real-time weather forecasts with graphical representation, making it easy to understand temperature, humidity, and other weather parameters at a glance.",
+      techStack: ["React", "Vite", "TailwindCSS", "JavaScript"],
+      githubLink: "https://github.com/divyanshsingh07/cloudi.git",
+      liveLink: "https://cloudi-taupe.vercel.app/",
+      image: "/images/project6.png",
+      color: "#38bdf8"
+    
   },
   {
     title: "CopyPaste Blocker Extension",

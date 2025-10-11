@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from './ui/button';
 import { useTheme } from './theme-provider';
@@ -10,10 +10,7 @@ const Hero = () => {
   const { theme } = useTheme();
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // Parallax effect on scroll
-  const { scrollY } = useScroll();
-  const backgroundY = useTransform(scrollY, [0, 500], [0, 100]);
-  const contentY = useTransform(scrollY, [0, 500], [0, 200]);
+  // Parallax effect removed
 
   // Choose gradient color based on theme
   const animatedGradient =
@@ -60,7 +57,6 @@ const Hero = () => {
     >
       {/* Animated background with parallax */}
       <motion.div
-        style={{ y: backgroundY }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
@@ -80,24 +76,38 @@ const Hero = () => {
           style={{ background: spotlightBg }}
           className="absolute inset-0"
         />
+        <div className="absolute inset-0 bg-background/60" />
       </motion.div>
 
       {/* Content with parallax */}
       <motion.div
-        style={{ y: contentY }}
-        className="container relative z-10 mx-auto px-4 py-32 text-center"
+        className="container relative z-10 mx-auto px-4 py-32 lg:py-40 text-center"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl font-display">
             Hi, I'm <span className="text-primary">Divyansh Singh</span>
           </h1>
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-          I'm a Computer Science student at VIT Andhra Pradesh with strong skills in full-stack development using the MERN stack. I've built projects like a bike rental platform, 3D portfolio, and weather dashboard. I interned at Bluestock, focusing on frontend tools with HTML, CSS, and JavaScript. I also completed a freelance portfolio website for a journalist. Certified in Azure AI and AWS Cloud, I'm passionate about creating efficient, user-friendly web applications and continuously learning new technologies.
-          </p>
+          <div className="mb-8 mx-auto max-w-4xl lg:max-w-5xl text-foreground/90 space-y-4">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+  I am a passionate Full-Stack Developer and DevOps enthusiast from Ayodhya, India, specializing in frontend development and cloud-native DevOps practices. I build scalable, responsive web applications using React, Node.js, and the MERN stack, while automating deployments and managing cloud infrastructure with Docker, Kubernetes, AWS, Azure, and CI/CD pipelines.  
+</p>
+<p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+  As a Web Developer Intern at OMGVA Foundation, I led end-to-end website development, created interactive interfaces, and automated workflows with Google Apps Script. My key projects include an AI-powered blogging platform, an object detection web app, and a Chrome extension to improve coding practice, reflecting a balance of frontend creativity and DevOps efficiency.
+</p>
+            <div className="mt-2 flex flex-wrap justify-center gap-3 lg:gap-4">
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">Full-Stack Developer</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">DevOps Enthusiast</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">Ayodhya, India</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">B.Tech CSE @ VIT-AP</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">React • Node.js • MERN</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">AWS • Azure • Oracle Cloud</span>
+              <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full border bg-background/80 text-foreground/90 text-xs sm:text-sm lg:text-base">Docker • Kubernetes • Jenkins • GitHub Actions</span>
+            </div>
+          </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center gap-4">
               <Button 
@@ -106,7 +116,7 @@ const Hero = () => {
                 className="group transition-all duration-300 hover:bg-background hover:text-primary border-2 border-primary rounded-full"
               >
                 <a 
-                  href="https://drive.google.com/file/d/1RCG9in9HtL_dUrtFvqdrbGE6P5AAghOW/view?usp=sharing" 
+                  href="https://drive.google.com/file/d/1a8bCtm1Ejj6jWUcequOn61YXGkbcSJeY/view?usp=sharing" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2"
