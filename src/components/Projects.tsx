@@ -14,6 +14,26 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "SwasthyaPath - Health Symptom Checker",
+    subtitle: "MERN + AI Symptom Checker",
+    description:
+      "AI-powered symptom checker built with the MERN stack. Provides educational insights using Google's Gemini, session history, rate limiting, and a modern responsive UI. Designed strictly for educational purposes, not medical advice.",
+    techStack: [
+      "React",
+      "Vite",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Google Gemini AI",
+      "Framer Motion"
+    ],
+    githubLink: "https://github.com/divyanshsingh07/Helth-Symptom-Checker.git",
+    liveLink: "https://helthsymptomchecker.onrender.com/",
+    image: "/images/project12.png",
+    color: "#f59e0b", // amber
+  },
+  {
     title: "Vedified Blogs",
     subtitle: "AI-Powered Blogging Platform",
     description:
