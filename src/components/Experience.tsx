@@ -1,136 +1,144 @@
 import { motion } from 'framer-motion';
 
 const animationProps = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
-  viewport: { once: true, margin: "-100px" as any }
+  transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+  viewport: { once: true, margin: "-50px" as any }
 };
 
 const experiences = [
   {
     role: "Full Stack Developer Intern",
     company: "ChitralAI",
-    type: "Remote",
+    period: "Present",
+    description: "Architecting scalable media systems and optimizing full-stack workflows for production-level AI applications.",
     points: [
-      "Worked on production-grade AI systems",
-      "Built and optimized backend + APIs",
-      "Contributed to scalable cloud infrastructure",
-      "Focused on performance and system reliability"
+      "Building production-grade AI systems with high-scale throughput",
+      "Optimizing backend performance and RESTful API architectures",
+      "Managing cloud-native infrastructure on AWS for reliability",
+      "Leading DevOps initiatives to streamline deployment cycles"
     ],
     tags: ["AI", "Backend", "AWS", "DevOps"]
   },
   {
     role: "Web Developer Intern",
     company: "OMGVA Foundation",
-    type: "",
+    period: "2024",
+    description: "Spearheaded the digital presence for a social foundation, integrating workflow automation and dynamic user systems.",
     points: [
-      "Developed full website from UI to deployment",
-      "Built interactive interfaces using modern frontend stack",
-      "Automated workflows using Google Apps Script",
-      "Integrated forms, APIs, and user systems"
+      "Developed an end-to-end web platform from UI design to launch",
+      "Built interactive frontend experiences using a modern logic stack",
+      "Automated organizational workflows with Google Apps Script",
+      "Integrated secure form-handling and user data management systems"
     ],
-    tags: ["Frontend", "Automation", "APIs"]
+    tags: ["Frontend", "Automation", "Google APIs"]
   },
   {
-    role: "Freelance Developer",
-    company: "NGOs",
-    type: "",
+    role: "Freelance Systems Developer",
+    company: "Social Organizations & NGOs",
+    period: "2023 - 2024",
+    description: "Dedicated to building high-impact platforms for non-profits with a focus on accessibility and real-world scalability.",
     points: [
-      "Delivered real-world platforms for NGOs",
-      "Focused on usability, accessibility, and deployment",
-      "Managed complete lifecycle from build to launch"
+      "Delivered production-ready platforms for multiple NGOs",
+      "Ensured high performance, accessibility, and smooth UX",
+      "Handled total project lifecycle from architecture to production"
     ],
-    tags: ["Fullstack", "Deployment", "Real-world impact"]
+    tags: ["Fullstack", "System Scaling", "Impact"]
   }
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-bg py-16 md:py-24 relative z-10 w-full overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 flex flex-col items-center">
+    <section id="experience" className="bg-background py-24 md:py-32 relative z-10 w-full overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         
-        {/* Header */}
-        <motion.div 
-          {...animationProps}
-          className="text-center mb-16 max-w-2xl mx-auto flex flex-col items-center"
-        >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-6 h-px bg-stroke"></div>
-            <span className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-medium">Experience</span>
-            <div className="w-6 h-px bg-stroke"></div>
+        {/* Section Header */}
+        <div className="mb-20 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-10">
+          <div className="max-w-3xl">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 font-semibold animate-fade-rise">
+              Career Timeline
+            </p>
+            <h2 
+               className="text-5xl sm:text-6xl md:text-8xl font-normal tracking-[-2px] text-foreground mb-6 animate-fade-rise"
+               style={{ fontFamily: "'Instrument Serif', serif" }}
+            >
+              Work & <em className="not-italic text-muted-foreground">impact.</em>
+            </h2>
+            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl animate-fade-rise-delay">
+              Hands-on experience building and deploying real-world applications across full-stack, AI, and DevOps environments.
+            </p>
           </div>
-          
-          <h2 className="text-4xl md:text-5xl font-display text-foreground mb-6">
-            Work & <span className="italic" style={{ fontFamily: "var(--font-display)" }}>impact</span>
-          </h2>
-          
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Hands-on experience building and deploying real-world applications across full-stack, AI, and DevOps environments.
-          </p>
-        </motion.div>
+        </div>
 
-        {/* Experience List */}
-        <div className="w-full max-w-[900px] flex flex-col gap-8 relative">
-          {/* Vertical Timeline Indicator (Optional background line) */}
-          <div className="absolute left-6 md:left-[51px] top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-stroke to-transparent hidden md:block"></div>
+        {/* Experience Timeline Grid */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical line - hidden on very small, visible on all others */}
+          <div className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-px bg-stroke/30 -translate-x-1/2 hidden sm:block"></div>
 
           {experiences.map((exp, idx) => (
             <motion.div 
               key={idx}
               {...animationProps}
-              transition={{ ...animationProps.transition, delay: idx * 0.15 } as any}
-              className="relative flex flex-col md:flex-row gap-6 md:gap-10 items-start group"
+              className={`relative mb-16 md:mb-32 last:mb-0 w-full flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-0 font-body`}
             >
-              {/* Timeline Dot */}
-              <div className="hidden md:flex mt-8 z-10 w-6 h-6 rounded-full bg-surface border-4 border-bg shadow-[0_0_0_1px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:border-white/10 transition-all duration-300">
-                <div className="w-full h-full bg-foreground rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-              </div>
+              {/* Timeline Indicator Dot (Centered on Desktop) */}
+              <div className="absolute left-[11px] md:left-1/2 top-2 md:top-12 w-[12px] h-[12px] rounded-full bg-foreground/40 group-hover:bg-foreground transition-all duration-500 scale-100 group-hover:scale-125 z-10 ring-4 ring-background -translate-x-1/2 hidden sm:block"></div>
 
-              {/* Card */}
-              <div className="w-full bg-surface/30 hover:bg-surface border border-stroke rounded-2xl p-6 md:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-black/50 hover:-translate-y-1">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-2">
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-display text-foreground mb-1">
-                      {exp.role}
-                    </h3>
-                    <p className="text-muted-foreground text-sm font-medium">
-                      {exp.company} {exp.type && <span className="text-stroke mx-2">|</span>} {exp.type}
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="mb-8 space-y-3">
-                  {exp.points.map((point, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
-                      <span className="text-foreground/30 mt-0.5">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-stroke/50">
+              {/* Company Info Column */}
+              <div className={`w-full md:w-1/2 flex flex-col ${idx % 2 === 0 ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16'} pl-10 sm:pl-12 md:pl-0`}>
+                <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.2em] mb-2 opacity-70">
+                  {exp.period}
+                </span>
+                <h3 
+                  className="text-4xl md:text-5xl text-foreground mb-4 leading-tight"
+                  style={{ fontFamily: "'Instrument Serif', serif" }}
+                >
+                  {exp.company}
+                </h3>
+                <div className={`flex flex-wrap gap-2 ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                   {exp.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-bg border border-stroke rounded-full text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <span key={tag} className="px-3 py-1 bg-surface/30 border border-stroke rounded-full text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {/* Role Card Column */}
+              <div className={`w-full md:w-1/2 pl-10 sm:pl-12 md:pl-0 ${idx % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
+                <div className="bg-surface/20 border border-stroke/50 hover:border-stroke/80 hover:bg-surface/30 rounded-3xl p-8 transition-all duration-700 shadow-sm hover:shadow-2xl group">
+                  <h4 className="text-xl md:text-2xl font-medium text-foreground mb-4">
+                    {exp.role}
+                  </h4>
+                  <p className="text-muted-foreground text-sm md:text-base mb-8 leading-relaxed opacity-80 group-hover:opacity-100">
+                    {exp.description}
+                  </p>
+
+                  <div className="flex flex-col gap-4">
+                    {exp.points.map((point, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-4 text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                        <div className="mt-1.5 w-1 h-1 rounded-full bg-muted-foreground/30 shrink-0"></div>
+                        <span>{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </motion.div>
           ))}
         </div>
 
-        {/* Closing Line */}
-        <motion.div 
-          {...animationProps}
-          transition={{ ...animationProps.transition, delay: 0.6 } as any}
-          className="mt-24 text-center max-w-2xl px-6"
-        >
-          <p className="text-lg md:text-xl font-display italic text-muted-foreground">
-            "I focus on building systems that are not just functional—but <span className="text-foreground">production-ready</span>, <span className="text-foreground">scalable</span>, and <span className="text-foreground">impactful</span>."
-          </p>
-        </motion.div>
+        {/* Footer Quote */}
+        <div className="mt-32 md:mt-48 text-center animate-fade-rise" style={{ animationDelay: "0.2s" }}>
+           <p 
+             className="text-2xl md:text-4xl lg:text-5xl font-normal italic text-muted-foreground max-w-4xl mx-auto leading-tight"
+             style={{ fontFamily: "'Instrument Serif', serif" }}
+           >
+             "I focus on building systems that are not just functional—but <span className="text-foreground">production-ready</span>, <span className="text-foreground">scalable</span>, and <span className="text-foreground">impactful</span>."
+           </p>
+        </div>
 
       </div>
     </section>

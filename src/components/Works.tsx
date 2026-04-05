@@ -5,7 +5,6 @@ import { FaGithub } from 'react-icons/fa';
 import imgBlog from '../assets/blog.png';
 import imgCourse from '../assets/course.png';
 import imgChitra from '../assets/chitra.png';
-import imgFlashman from '../assets/flashman.png';
 import imgYpf from '../assets/ypf.png';
 
 const animationProps = {
@@ -19,53 +18,56 @@ const works = [
   {
     span: "md:col-span-7",
     title: "AI Blogging Platform",
-    type: "AI • Fullstack • DevOps",
-    description: "AI-powered blogging platform with Gemini integration, JWT auth, and production deployment",
-    tech: "React 19, Node.js, MongoDB, Docker, AWS",
+    type: "MERN • AWS • CI/CD",
+    description: "Full-stack blogging platform with AI content generation, secure authentication, and automated deployment pipelines.",
+    tech: "React, Node.js, MongoDB, AWS, CI/CD",
     liveUrl: "https://blog.divyansh.codes/",
-    githubUrl: "#",
-    label: "View — AI Blogging Platform",
+    githubUrl: "https://github.com/divyanshsingh07/ai-blog.git",
+    label: "View AI Blog",
     image: imgBlog
   },
   {
     span: "md:col-span-5",
-    title: "MiniCourses Platform",
-    type: "SaaS • Fullstack",
-    description: "Role-based course platform with secure APIs and cloud deployment",
-    tech: "MERN, AWS, CI/CD",
+    title: "Course Subscription Suite",
+    type: "MERN • AWS Deployment",
+    description: "End-to-end course management platform with secure payment integration and production-grade hosting on a custom domain.",
+    tech: "MERN Stack, AWS, Personal Domain",
     liveUrl: "https://course.divyansh.codes/",
-    label: "View — MiniCourses",
+    githubUrl: "https://github.com/divyanshsingh07/CourseSubscription.git",
+    label: "View Courses",
     image: imgCourse
   },
   {
     span: "md:col-span-5",
-    title: "ChitralAI",
-    type: "AI • Cloud • DevOps",
-    description: "Worked on full-stack and infrastructure for face recognition and media search system",
-    tech: "AI, AWS, Backend, DevOps",
-    liveUrl: "https://chitralai.in/",
-    label: "View — ChitralAI",
-    image: imgChitra
+    title: "OMGVA Foundation",
+    type: "Real-world • Non-Profit",
+    description: "Official platform for a social foundation, featuring dynamic integrations with Google Apps Script for automated data handling.",
+    tech: "HTML5, CSS3, JS, Apps Script",
+    liveUrl: "https://omgvafoundation.com",
+    githubUrl: "https://github.com/divyanshsingh07/omgva.git",
+    label: "View OMGVA",
+    image: imgBlog // Using imgBlog as a placeholder if precise asset is not available
   },
   {
     span: "md:col-span-7",
-    title: "DevOps CI/CD System (Flashman)",
-    type: "DevOps • Infrastructure",
-    description: "Designed and implemented CI/CD pipelines for frontend and backend deployment",
-    tech: "Docker, GitHub Actions, AWS",
-    liveUrl: "https://getflashman.com/",
-    label: "View — CI/CD System",
-    image: imgFlashman
+    title: "Yuva Prerna Foundation",
+    type: "NGO • Web Platform",
+    description: "Built a modern, responsive web home for the YPF NGO, simplifying their digital outreach and volunteer management.",
+    tech: "HTML5, CSS3, JS, Apps Script",
+    liveUrl: "https://ypfngo.in",
+    githubUrl: "https://github.com/divyanshsingh07/YPFNGO.git",
+    label: "View YPFNGO",
+    image: imgYpf
   },
   {
     span: "md:col-span-12",
-    title: "NGO Platforms",
-    type: "Freelance • Real-world",
-    description: "Built and deployed websites for NGOs focusing on accessibility and real usage",
-    tech: "Fullstack, Deployment",
-    liveUrl: "https://ypfngo.in",
-    label: "View — NGO Work",
-    image: imgYpf
+    title: "ChitralAI",
+    type: "AI • Infrastructure • DevOps",
+    description: "Core contributor to full-stack and DevOps architectures for high-scale media recognition and search systems in production.",
+    tech: "Full-Stack, DevOps, AI, AWS",
+    liveUrl: "https://chitralai.in/",
+    label: "View ChitralAI",
+    image: imgChitra
   }
 ];
 

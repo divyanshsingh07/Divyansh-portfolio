@@ -1,5 +1,5 @@
 "use client";
-import { FiMail, FiMessageCircle, FiPhone, FiMapPin, FiStar } from "react-icons/fi";
+import { FiMail, FiMessageCircle, FiPhone, FiMapPin, FiStar, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const TESTIMONIALS = [
   {
@@ -116,42 +116,68 @@ export default function ContactPage() {
         </div>
 
         {/* Right Side: Testimonials Slider */}
-        <div className="w-full h-full flex flex-col justify-center relative overflow-hidden animate-fade-rise-delay xl:pl-6 max-w-[100vw] sm:max-w-full">
+        <div className="w-full flex flex-col justify-center animate-fade-rise-delay xl:pl-12">
           
-          {/* Subtle decoration */}
-          <div className="flex items-center gap-3 mb-6 opacity-60 px-2 lg:px-0 mx-auto xl:mx-0">
-            <div className="flex -space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <FiStar key={i} className="text-foreground fill-foreground w-4 h-4" />
-              ))}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3 opacity-60">
+              <div className="flex -space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <FiStar key={i} className="text-foreground fill-foreground w-4 h-4" />
+                ))}
+              </div>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Trusted by founders</span>
             </div>
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Trusted by founders</span>
+
+            {/* Navigation Buttons */}
+            <div className="flex gap-2">
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('testimonial-container');
+                  if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+                }}
+                className="p-3 rounded-full border border-border hover:bg-surface transition-colors text-foreground"
+                aria-label="Previous testimonial"
+              >
+                <FiChevronLeft size={20} />
+              </button>
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('testimonial-container');
+                  if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
+                }}
+                className="p-3 rounded-full border border-border hover:bg-surface transition-colors text-foreground"
+                aria-label="Next testimonial"
+              >
+                <FiChevronRight size={20} />
+              </button>
+            </div>
           </div>
 
-          {/* Slider Container with Mask */}
-          <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div className="flex w-max animate-marquee py-4 hover:[animation-play-state:paused]">
-              
-              {/* Render twice for infinite loop */}
-              {[...TESTIMONIALS, ...TESTIMONIALS].map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="w-[300px] sm:w-[350px] shrink-0 mx-3 p-8 rounded-2xl border border-border/40 bg-surface/30 backdrop-blur-sm flex flex-col gap-6 transition-colors hover:bg-surface/50"
-                >
-                  <p className="text-foreground/90 text-lg leading-relaxed font-body">"{item.text}"</p>
-                  <div className="mt-auto flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-border flex items-center justify-center text-muted-foreground font-display text-lg">
-                      {Array.from(item.author)[0]}
-                    </div>
-                    <div>
-                      <p className="text-foreground font-medium text-sm">{item.author}</p>
-                      <p className="text-muted-foreground text-xs uppercase tracking-wider">{item.role}</p>
-                    </div>
+          {/* Slider Container */}
+          <div 
+            id="testimonial-container"
+            className="flex flex-nowrap gap-6 overflow-x-auto no-scrollbar scroll-smooth w-full pb-4 items-stretch"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {TESTIMONIALS.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="w-[300px] sm:w-[400px] shrink-0 p-8 rounded-3xl border border-border/40 bg-surface/30 backdrop-blur-sm flex flex-col gap-6 hover:bg-surface/40 transition-all duration-500"
+              >
+                <p className="text-foreground/90 text-sm sm:text-base md:text-lg leading-relaxed font-body italic">
+                  "{item.text}"
+                </p>
+                <div className="mt-auto flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-border/50 flex items-center justify-center text-muted-foreground font-display text-xl">
+                    {Array.from(item.author)[0]}
+                  </div>
+                  <div>
+                    <p className="text-foreground font-medium text-sm">{item.author}</p>
+                    <p className="text-muted-foreground text-[10px] uppercase tracking-wider">{item.role}</p>
                   </div>
                 </div>
-              ))}
-
-            </div>
+              </div>
+            ))}
           </div>
 
         </div>
