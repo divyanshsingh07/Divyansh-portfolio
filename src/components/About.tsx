@@ -1,6 +1,6 @@
 "use client";
 
-import myImage from "../assets/Div.jpeg";
+import myImage from "../assets/image.png";
 
 export default function AboutSection() {
   return (
@@ -9,15 +9,17 @@ export default function AboutSection() {
       <div className="relative z-10 max-w-[1200px] mx-auto rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl group border border-stroke/50 group-hover:border-stroke transition-all duration-700 animate-fade-rise">
         
         {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-black">
           <img
             src={myImage} 
             alt="Divyansh Singh"
-            className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+            className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-105 transition-all duration-1000 ease-in-out"
           />
-          {/* Gradient Overlay so text is readable */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/40 group-hover:via-background/90 transition-all duration-700"></div>
+          {/* Intense Gradient Overlay for high text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent transition-all duration-700"></div>
+          <div className="absolute inset-0 bg-background/40"></div>
         </div>
+
 
         {/* Overlay Content */}
         <div className="relative z-10 flex flex-col items-center text-center p-6 sm:p-10 md:p-16 pt-[180px] sm:pt-[220px] md:pt-[320px]">

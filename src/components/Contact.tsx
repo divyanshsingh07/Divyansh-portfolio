@@ -46,8 +46,9 @@ export default function ContactPage() {
           {/* Subtext */}
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-12 animate-fade-rise-delay">
             Have an idea, a product to ship, or a system to scale?<br className="hidden md:block" />
-            I’m always open to working on meaningful projects and collaborating on real-world solutions.
+            I am available as a **Full-Stack Developer Freelancer** for both **dedicated project work** and **hourly-rate collaborations**. Let's build something real.
           </p>
+
 
           {/* Contact Actions */}
           <div className="flex flex-col sm:flex-row gap-4 w-full mb-12 animate-fade-rise-delay-2">
