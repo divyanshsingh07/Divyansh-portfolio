@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import { 
   SiKubernetes, SiGithubactions, SiJenkins, SiLinux, SiNginx,
   SiTailwindcss, SiExpress, SiJsonwebtokens,
